@@ -34,13 +34,6 @@ public class CompaniesController {
         return "redirect:/companies";
     }
 
-    //  reqParam deleting
-//    @GetMapping("/companies/delete")
-//    public String deleteCompany(@RequestParam int id) {
-//        companyRepository.deleteById(id);
-//        return "redirect:/companies";
-//    }
-
     @GetMapping("/companies/delete/{id}")
     public String deleteCompany(@PathVariable("id") int id) {
         companyRepository.deleteById(id);
