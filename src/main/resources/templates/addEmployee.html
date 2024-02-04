@@ -5,10 +5,12 @@
     <title>Add Employee</title>
 </head>
 <body>
+<th:block th:include="/fragment/headerFragment::userInfo"></th:block>
+
 Add Company <br>
 <form method="post" action="/employees/add" enctype="multipart/form-data">
     Name: <input type="text" name="name"> <br>
-    Address: <input type="text" name="surname"> <br>
+    Surname: <input type="text" name="surname"> <br>
     Email: <input type="email" name="email"> <br>
     Company: <select name="company.id">
     <option th:each="company : ${companies}" th:text="${company.name}" th:value="${company.id}"></option>

@@ -19,4 +19,7 @@ public class Company {
     @OneToMany (mappedBy = "company")
     private List<Employee> employeeList;
 
+    @ManyToOne
+    private User user;
+
 }

@@ -2,7 +2,9 @@ package org.example.companyemploye.controller;
 
 import org.example.companyemploye.entity.Company;
 import org.example.companyemploye.repository.CompanyRepository;
+import org.example.companyemploye.security.SpringUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +31,8 @@ public class CompaniesController {
     }
 
     @PostMapping("/companies/add")
-    public String AddCompany(@ModelAttribute Company company) {
+    public String AddCompany(@ModelAttribute Company company, @AuthenticationPrincipal SpringUser springUser) {
+        company.setUser(springUser.getUser());
         companyRepository.save(company);
         return "redirect:/companies";
     }

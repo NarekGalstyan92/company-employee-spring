@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <th:block th:include="/fragment/headerFragment::import"/>
 </head>
 <body>
+<th:block th:include="/fragment/headerFragment::userInfo"></th:block>
+
 <a href="/companies">Companies</a> | <a href="/employees">Employees</a>
+<a href="/user/register">Registration</a>
 </body>
 </html>

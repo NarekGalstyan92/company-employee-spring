@@ -5,6 +5,8 @@
     <title>Add Company</title>
 </head>
 <body>
+<th:block th:include="/fragment/headerFragment::userInfo"></th:block>
+
 Add Company <br>
 <form method="post" action="/companies/add">
     Name: <input type="text" name="name"> <br>
